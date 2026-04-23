@@ -1102,6 +1102,39 @@
             line-height: 1.6;
         }
 
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
+            margin: 12px 0 14px;
+        }
+
+        .pricing-price .currency {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .pricing-price .amount {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .pricing-price .period {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-left: 2px;
+        }
+
+        .pricing-card.featured .pricing-price .amount,
+        .pricing-card.featured .pricing-price .currency {
+            color: var(--primary);
+        }
+
         .pricing-card-body {
             padding: 24px 28px 32px;
         }
@@ -2095,6 +2128,7 @@
                     <div class="pricing-card-badge">Populer</div>
                     <div class="pricing-card-header">
                         <h3>Basic</h3>
+                        <div class="pricing-price"><span class="currency">Rp</span><span class="amount">149.999</span><span class="period">/bulan</span></div>
                         <p>Untuk semua jenis usaha. Kelola operasional dan penjualan lengkap.</p>
                     </div>
                     <div class="pricing-card-body">
@@ -2116,6 +2150,7 @@
                     <div class="pricing-card-badge">Recommended</div>
                     <div class="pricing-card-header">
                         <h3>Standard</h3>
+                        <div class="pricing-price"><span class="currency">Rp</span><span class="amount">349.999</span><span class="period">/bulan</span></div>
                         <p>Kelola operasional, penjualan dan keuangan secara lengkap.</p>
                     </div>
                     <div class="pricing-card-body">
@@ -2139,6 +2174,7 @@
                     <div class="pricing-card-badge">Terlengkap</div>
                     <div class="pricing-card-header">
                         <h3>Premium</h3>
+                        <div class="pricing-price"><span class="currency">Rp</span><span class="amount">749.999</span><span class="period">/bulan</span></div>
                         <p>Automasi operasional, penjualan, keuangan, karyawan dan penggajian.</p>
                     </div>
                     <div class="pricing-card-body">
