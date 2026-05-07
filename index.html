@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AULIASOFT - Kasir Modern untuk Operasional yang Lebih Efisien</title>
-    <meta name="description" content="AULIASOFT membantu Anda mengelola penjualan, stok, dan laporan keuangan secara cepat, akurat, dan terintegrasi.">
-    <meta name="keywords" content="AULIASOFT, aplikasi kasir, POS, point of sale, manajemen penjualan, stok, laporan keuangan">
+    <meta name="description"
+        content="AULIASOFT membantu Anda mengelola penjualan, stok, dan laporan keuangan secara cepat, akurat, dan terintegrasi.">
+    <meta name="keywords"
+        content="AULIASOFT, aplikasi kasir, POS, point of sale, manajemen penjualan, stok, laporan keuangan">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <style>
         /* ===== CSS Reset & Variables ===== */
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -37,10 +43,10 @@
             --bg-light: #F8FAFC;
             --bg-subtle: #F1F5F9;
             --border: #E2E8F0;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
-            --shadow-lg: 0 10px 40px rgba(0,0,0,0.1);
-            --shadow-xl: 0 20px 60px rgba(0,0,0,0.12);
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.12);
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
@@ -62,7 +68,12 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: var(--text-dark);
             font-weight: 700;
             line-height: 1.3;
@@ -87,33 +98,75 @@
 
         /* ===== Animations ===== */
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-40px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(40px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         .animate-on-scroll {
@@ -245,13 +298,13 @@
         }
 
         .btn-ghost {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
             color: white;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .btn-ghost:hover {
-            background: rgba(255,255,255,0.25);
+            background: rgba(255, 255, 255, 0.25);
             transform: translateY(-2px);
         }
 
@@ -320,7 +373,7 @@
 
         .hero-content p {
             font-size: 1.15rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 36px;
             max-width: 520px;
             line-height: 1.8;
@@ -340,10 +393,10 @@
             align-items: center;
             gap: 8px;
             padding: 8px 18px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 50px;
-            color: rgba(255,255,255,0.9);
+            color: rgba(255, 255, 255, 0.9);
             font-size: 0.85rem;
             font-weight: 500;
         }
@@ -367,8 +420,8 @@
         }
 
         .hero-card {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: var(--radius-xl);
             padding: 40px;
             width: 100%;
@@ -402,7 +455,7 @@
         }
 
         .hero-card-subtitle {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.8rem;
         }
 
@@ -413,8 +466,8 @@
         }
 
         .hero-stat {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: var(--radius-md);
             padding: 20px;
             text-align: center;
@@ -429,7 +482,7 @@
 
         .hero-stat-label {
             font-size: 0.78rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             font-weight: 500;
             margin-top: 4px;
             display: block;
@@ -741,7 +794,7 @@
             direction: rtl;
         }
 
-        .showcase-block.reverse > * {
+        .showcase-block.reverse>* {
             direction: ltr;
         }
 
@@ -791,7 +844,7 @@
             padding: 14px;
             background: #1a1a2e;
             border-radius: 36px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.2), 0 0 0 2px rgba(255,255,255,0.1) inset;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(255, 255, 255, 0.1) inset;
         }
 
         .phone-mockup::before {
@@ -836,7 +889,7 @@
             padding: 10px;
             background: #1a1a2e;
             border-radius: 28px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         .gallery-item .phone-mockup-sm::before {
@@ -874,9 +927,11 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+
             .showcase-block.reverse {
                 direction: ltr;
             }
+
             .showcase-gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -887,9 +942,11 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
             }
+
             .gallery-item .phone-mockup-sm {
                 width: 160px;
             }
+
             .phone-mockup {
                 width: 240px;
             }
@@ -915,7 +972,7 @@
             letter-spacing: -0.5px;
         }
 
-        .why-content > p {
+        .why-content>p {
             font-size: 1.05rem;
             margin-bottom: 28px;
         }
@@ -1317,7 +1374,7 @@
             margin-bottom: 16px;
         }
 
-        .contact-info > p {
+        .contact-info>p {
             margin-bottom: 32px;
             font-size: 1.05rem;
         }
@@ -1430,7 +1487,7 @@
         /* ===== Footer ===== */
         .footer {
             background: var(--secondary);
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             padding: 80px 0 0;
         }
 
@@ -1439,7 +1496,7 @@
             grid-template-columns: 2fr 1fr 1fr 1.5fr;
             gap: 40px;
             padding-bottom: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-brand h3 {
@@ -1462,12 +1519,12 @@
         .footer-social a {
             width: 40px;
             height: 40px;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
             transition: var(--transition);
         }
 
@@ -1494,7 +1551,7 @@
 
         .footer-links a {
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .footer-links a:hover {
@@ -1502,8 +1559,8 @@
         }
 
         .footer-cta {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: var(--radius-md);
             padding: 24px;
         }
@@ -1522,11 +1579,11 @@
             padding: 24px 0;
             text-align: center;
             font-size: 0.82rem;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255, 255, 255, 0.4);
         }
 
         .footer-bottom a {
-            color: rgba(255,255,255,0.6);
+            color: rgba(255, 255, 255, 0.6);
         }
 
         .footer-bottom a:hover {
@@ -1574,7 +1631,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 998;
         }
 
@@ -1627,17 +1684,35 @@
                 text-align: center;
             }
 
-            .hero-content p { margin-left: auto; margin-right: auto; }
-            .hero-badges { justify-content: center; }
-            .hero-cta { justify-content: center; }
-            .hero-visual { display: none; }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
 
-            .about-grid, .why-grid, .contact-grid {
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .about-grid,
+            .why-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
 
-            .services-grid, .features-grid, .products-grid, .pricing-grid, .testimonials-grid {
+            .services-grid,
+            .features-grid,
+            .products-grid,
+            .pricing-grid,
+            .testimonials-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -1649,26 +1724,52 @@
             .pricing-card.featured {
                 transform: none;
             }
+
             .pricing-card.featured:hover {
                 transform: translateY(-6px);
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-toggle { display: block; }
-            .mobile-menu { display: block; }
+            .nav-links {
+                display: none;
+            }
 
-            .hero { padding: 130px 0 70px; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .section { padding: 70px 0; }
-            .section-title { font-size: 1.8rem; }
+            .mobile-toggle {
+                display: block;
+            }
 
-            .services-grid, .features-grid, .products-grid, .pricing-grid, .testimonials-grid {
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero {
+                padding: 130px 0 70px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .services-grid,
+            .features-grid,
+            .products-grid,
+            .pricing-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
-            .form-row { grid-template-columns: 1fr; }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
 
             .footer-grid {
                 grid-template-columns: 1fr;
@@ -1684,13 +1785,28 @@
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 { font-size: 1.8rem; }
-            .hero-badges { flex-direction: column; align-items: center; }
-            .hero-cta { flex-direction: column; width: 100%; }
-            .hero-cta .btn { width: 100%; justify-content: center; }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- ===== Navbar ===== -->
@@ -1708,7 +1824,8 @@
                 <li><a href="#testimonials">Testimoni</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
-            <a href="https://wa.me/6281241945881" target="_blank" class="btn btn-primary" style="display:none;" id="navCta">
+            <a href="https://wa.me/6281241945881" target="_blank" class="btn btn-primary" style="display:none;"
+                id="navCta">
                 <i class="fab fa-whatsapp"></i> Hubungi
             </a>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu">
@@ -1740,7 +1857,8 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Kasir Modern untuk<br>Operasional yang<br>Lebih <span class="highlight">Efisien</span></h1>
-                <p>AULIASOFT membantu Anda mengelola penjualan, stok, dan laporan keuangan secara cepat, akurat, dan terintegrasi. Cocok untuk berbagai jenis usaha.</p>
+                <p>AULIASOFT membantu Anda mengelola penjualan, stok, dan laporan keuangan secara cepat, akurat, dan
+                    terintegrasi. Cocok untuk berbagai jenis usaha.</p>
                 <div class="hero-badges">
                     <span class="hero-badge"><i class="fas fa-check-circle"></i> Mudah digunakan</span>
                     <span class="hero-badge"><i class="fas fa-check-circle"></i> Harga terjangkau</span>
@@ -1749,7 +1867,8 @@
                 </div>
                 <div class="hero-cta">
                     <a href="#pricing" class="btn btn-white"><i class="fas fa-rocket"></i> Lihat Paket</a>
-                    <a href="https://wa.me/6281241945881" target="_blank" class="btn btn-ghost"><i class="fab fa-whatsapp"></i> Hubungi Kami</a>
+                    <a href="https://www.auliasoft.com/" target="_blank" class="btn btn-ghost"><i
+                            class="fab fa-firefox"></i> Hubungi Kami</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -1792,7 +1911,9 @@
                 <div class="about-content animate-on-scroll">
                     <span class="section-badge"><i class="fas fa-info-circle"></i> Tentang Kami</span>
                     <h2>Solusi Kasir Digital #1 untuk Bisnis Anda</h2>
-                    <p>AULIASOFT adalah aplikasi Point of Sale (POS) berbasis web yang dirancang untuk membantu bisnis dalam mengelola penjualan, inventaris, dan pelanggan dengan mudah dan efisien. Dengan AULIASOFT, operasional bisnis Anda menjadi lebih cepat, akurat, dan terintegrasi.</p>
+                    <p>AULIASOFT adalah aplikasi Point of Sale (POS) berbasis web yang dirancang untuk membantu bisnis
+                        dalam mengelola penjualan, inventaris, dan pelanggan dengan mudah dan efisien. Dengan AULIASOFT,
+                        operasional bisnis Anda menjadi lebih cepat, akurat, dan terintegrasi.</p>
                     <div class="about-stats">
                         <div class="about-stat-card">
                             <i class="fas fa-store"></i>
@@ -1830,23 +1951,30 @@
             <div class="section-header animate-on-scroll">
                 <span class="section-badge"><i class="fas fa-concierge-bell"></i> Layanan</span>
                 <h2 class="section-title">Layanan Profesional Kami</h2>
-                <p class="section-subtitle">Kami menyediakan layanan end-to-end untuk memastikan bisnis Anda berjalan lancar</p>
+                <p class="section-subtitle">Kami menyediakan layanan end-to-end untuk memastikan bisnis Anda berjalan
+                    lancar</p>
             </div>
             <div class="services-grid">
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon"><i class="fas fa-cogs"></i></div>
                     <h3>Implementasi & Konfigurasi POS</h3>
-                    <p>Kami membantu proses implementasi & konfigurasi POS AULIASOFT secara terstruktur agar siap digunakan sesuai kebutuhan operasional bisnis Anda. Mulai dari pengaturan outlet, pajak, metode pembayaran, hingga penyesuaian katalog produk.</p>
+                    <p>Kami membantu proses implementasi & konfigurasi POS AULIASOFT secara terstruktur agar siap
+                        digunakan sesuai kebutuhan operasional bisnis Anda. Mulai dari pengaturan outlet, pajak, metode
+                        pembayaran, hingga penyesuaian katalog produk.</p>
                 </div>
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                     <h3>Pelatihan Pengguna & Onboarding</h3>
-                    <p>Pelatihan pengguna & onboarding AULIASOFT membantu tim Anda cepat mahir menggunakan aplikasi kasir untuk transaksi, pengelolaan stok, dan pembuatan laporan. Sesi terstruktur disertai panduan praktik.</p>
+                    <p>Pelatihan pengguna & onboarding AULIASOFT membantu tim Anda cepat mahir menggunakan aplikasi
+                        kasir untuk transaksi, pengelolaan stok, dan pembuatan laporan. Sesi terstruktur disertai
+                        panduan praktik.</p>
                 </div>
                 <div class="service-card animate-on-scroll">
                     <div class="service-icon"><i class="fas fa-headset"></i></div>
                     <h3>Dukungan Teknis & Maintenance</h3>
-                    <p>Dukungan teknis dan maintenance AULIASOFT memastikan aplikasi kasir Anda selalu stabil, aman, dan siap digunakan. Tim kami membantu penanganan kendala operasional, pembaruan sistem, serta optimasi performa.</p>
+                    <p>Dukungan teknis dan maintenance AULIASOFT memastikan aplikasi kasir Anda selalu stabil, aman, dan
+                        siap digunakan. Tim kami membantu penanganan kendala operasional, pembaruan sistem, serta
+                        optimasi performa.</p>
                 </div>
             </div>
         </div>
@@ -1865,27 +1993,32 @@
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon"><i class="fas fa-cash-register"></i></div>
                     <h3>Manajemen Transaksi Real-time</h3>
-                    <p>Kelola setiap transaksi penjualan secara langsung dan real-time. Data penjualan langsung tercatat dan dapat dipantau kapan saja.</p>
+                    <p>Kelola setiap transaksi penjualan secara langsung dan real-time. Data penjualan langsung tercatat
+                        dan dapat dipantau kapan saja.</p>
                 </div>
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon"><i class="fas fa-boxes-stacked"></i></div>
                     <h3>Pengelolaan Stok Otomatis</h3>
-                    <p>Stok barang otomatis terupdate setiap ada transaksi. Notifikasi stok rendah membantu antisipasi kehabisan barang.</p>
+                    <p>Stok barang otomatis terupdate setiap ada transaksi. Notifikasi stok rendah membantu antisipasi
+                        kehabisan barang.</p>
                 </div>
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
                     <h3>Laporan Keuangan Lengkap</h3>
-                    <p>Laporan keuangan yang lengkap dan akurat. Mulai dari penjualan harian, mingguan, hingga bulanan dengan visualisasi mudah.</p>
+                    <p>Laporan keuangan yang lengkap dan akurat. Mulai dari penjualan harian, mingguan, hingga bulanan
+                        dengan visualisasi mudah.</p>
                 </div>
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon"><i class="fas fa-diagram-project"></i></div>
                     <h3>Sistem Terintegrasi</h3>
-                    <p>Seluruh modul saling terhubung dari kasir, stok, keuangan, hingga manajemen karyawan. Satu platform untuk semua.</p>
+                    <p>Seluruh modul saling terhubung dari kasir, stok, keuangan, hingga manajemen karyawan. Satu
+                        platform untuk semua.</p>
                 </div>
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon"><i class="fas fa-hand-pointer"></i></div>
                     <h3>User-Friendly</h3>
-                    <p>Antarmuka yang intuitif dan mudah digunakan. Tidak perlu keahlian teknis khusus untuk mengoperasikan AULIASOFT.</p>
+                    <p>Antarmuka yang intuitif dan mudah digunakan. Tidak perlu keahlian teknis khusus untuk
+                        mengoperasikan AULIASOFT.</p>
                 </div>
                 <div class="feature-card animate-on-scroll">
                     <div class="feature-icon"><i class="fas fa-qrcode"></i></div>
@@ -1903,19 +2036,28 @@
             <div class="section-header animate-on-scroll">
                 <span class="section-badge"><i class="fas fa-laptop-code"></i> Product Knowledge</span>
                 <h2 class="section-title">Kenali Lebih Dekat AULIASOFT</h2>
-                <p class="section-subtitle">Lihat langsung bagaimana AULIASOFT bekerja untuk bisnis Anda melalui tampilan aplikasi yang sesungguhnya</p>
+                <p class="section-subtitle">Lihat langsung bagaimana AULIASOFT bekerja untuk bisnis Anda melalui
+                    tampilan aplikasi yang sesungguhnya</p>
             </div>
 
             <div class="showcase-intro animate-on-scroll">
-                <p>AULIASOFT adalah aplikasi <strong>Point of Sale (POS)</strong> berbasis web yang bisa diakses melalui browser di perangkat apa saja — smartphone, tablet, maupun komputer. Dibangun dengan teknologi modern, AULIASOFT menghadirkan pengalaman pengelolaan bisnis yang cepat, aman, dan dapat diandalkan untuk operasional sehari-hari.</p>
+                <p>AULIASOFT adalah aplikasi <strong>Point of Sale (POS)</strong> berbasis web yang bisa diakses melalui
+                    browser di perangkat apa saja — smartphone, tablet, maupun komputer. Dibangun dengan teknologi
+                    modern, AULIASOFT menghadirkan pengalaman pengelolaan bisnis yang cepat, aman, dan dapat diandalkan
+                    untuk operasional sehari-hari.</p>
             </div>
 
             <!-- Block 1: Manajemen Produk -->
             <div class="showcase-block animate-on-scroll">
                 <div class="showcase-text">
-                    <h3><i class="fas fa-boxes-stacked" style="color:var(--primary);margin-right:8px;"></i> Manajemen Produk & Stok</h3>
-                    <p>Kelola seluruh katalog produk Anda dengan mudah. Tambah produk baru, atur kategori, set harga jual, dan pantau stok secara real-time. AULIASOFT mendukung <strong>import produk massal via Excel</strong>, sehingga Anda bisa memindahkan data produk yang sudah ada dengan cepat.</p>
-                    <p>Fitur <strong>Laporan Stok</strong> memungkinkan Anda melihat kondisi inventaris kapan saja, termasuk notifikasi otomatis saat stok mendekati batas minimum. Ekspor data ke CSV, Excel, atau PDF untuk keperluan analisis dan dokumentasi.</p>
+                    <h3><i class="fas fa-boxes-stacked" style="color:var(--primary);margin-right:8px;"></i> Manajemen
+                        Produk & Stok</h3>
+                    <p>Kelola seluruh katalog produk Anda dengan mudah. Tambah produk baru, atur kategori, set harga
+                        jual, dan pantau stok secara real-time. AULIASOFT mendukung <strong>import produk massal via
+                            Excel</strong>, sehingga Anda bisa memindahkan data produk yang sudah ada dengan cepat.</p>
+                    <p>Fitur <strong>Laporan Stok</strong> memungkinkan Anda melihat kondisi inventaris kapan saja,
+                        termasuk notifikasi otomatis saat stok mendekati batas minimum. Ekspor data ke CSV, Excel, atau
+                        PDF untuk keperluan analisis dan dokumentasi.</p>
                     <div class="feature-tags">
                         <span class="feature-tag"><i class="fas fa-check"></i> Tambah & Edit Produk</span>
                         <span class="feature-tag"><i class="fas fa-check"></i> Import Excel</span>
@@ -1926,7 +2068,8 @@
                 </div>
                 <div class="showcase-phone">
                     <div class="phone-mockup">
-                        <img src="img/Untitled.png" alt="Manajemen Produk AULIASOFT - Daftar Produk dan Stok" loading="lazy">
+                        <img src="img/Untitled.png" alt="Manajemen Produk AULIASOFT - Daftar Produk dan Stok"
+                            loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1934,9 +2077,14 @@
             <!-- Block 2: Kasir / POS -->
             <div class="showcase-block reverse animate-on-scroll">
                 <div class="showcase-text">
-                    <h3><i class="fas fa-cash-register" style="color:var(--primary);margin-right:8px;"></i> Kasir Online (Point of Sale)</h3>
-                    <p>Antarmuka kasir yang dirancang untuk kecepatan dan kemudahan. Pilih lokasi outlet, cari produk dengan <strong>nama, SKU, atau pindai barcode</strong>, atur jenis layanan (dine-in, take-away), dan proses transaksi dalam hitungan detik.</p>
-                    <p>Mendukung fitur <strong>multi-meja</strong> untuk restoran, pemilihan staf layanan, serta <strong>pesanan dapur</strong> untuk alur kerja yang lebih terorganisir. Sistem walk-in customer memudahkan transaksi tanpa perlu registrasi pelanggan.</p>
+                    <h3><i class="fas fa-cash-register" style="color:var(--primary);margin-right:8px;"></i> Kasir Online
+                        (Point of Sale)</h3>
+                    <p>Antarmuka kasir yang dirancang untuk kecepatan dan kemudahan. Pilih lokasi outlet, cari produk
+                        dengan <strong>nama, SKU, atau pindai barcode</strong>, atur jenis layanan (dine-in, take-away),
+                        dan proses transaksi dalam hitungan detik.</p>
+                    <p>Mendukung fitur <strong>multi-meja</strong> untuk restoran, pemilihan staf layanan, serta
+                        <strong>pesanan dapur</strong> untuk alur kerja yang lebih terorganisir. Sistem walk-in customer
+                        memudahkan transaksi tanpa perlu registrasi pelanggan.</p>
                     <div class="feature-tags">
                         <span class="feature-tag"><i class="fas fa-check"></i> Scan Barcode / SKU</span>
                         <span class="feature-tag"><i class="fas fa-check"></i> Multi Meja</span>
@@ -1947,7 +2095,8 @@
                 </div>
                 <div class="showcase-phone">
                     <div class="phone-mockup">
-                        <img src="img/Untitled1.png" alt="Kasir Online AULIASOFT - Halaman Transaksi POS" loading="lazy">
+                        <img src="img/Untitled1.png" alt="Kasir Online AULIASOFT - Halaman Transaksi POS"
+                            loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1955,9 +2104,14 @@
             <!-- Block 3: Proses Pembayaran -->
             <div class="showcase-block animate-on-scroll">
                 <div class="showcase-text">
-                    <h3><i class="fas fa-credit-card" style="color:var(--primary);margin-right:8px;"></i> Proses Pembayaran Fleksibel</h3>
-                    <p>AULIASOFT mendukung berbagai metode pembayaran untuk kenyamanan pelanggan Anda. Terima pembayaran <strong>tunai, QRIS, kartu debit/kredit melalui EDC</strong>, hingga <strong>multi-bayar</strong> (split payment) dalam satu transaksi.</p>
-                    <p>Rincian perhitungan total ditampilkan secara transparan: subtotal, diskon, poin anggota, biaya pengiriman, dan biaya pengepakan. Tersedia juga fitur <strong>penjualan kredit</strong> dan <strong>penawaran</strong> untuk fleksibilitas bisnis yang lebih besar.</p>
+                    <h3><i class="fas fa-credit-card" style="color:var(--primary);margin-right:8px;"></i> Proses
+                        Pembayaran Fleksibel</h3>
+                    <p>AULIASOFT mendukung berbagai metode pembayaran untuk kenyamanan pelanggan Anda. Terima pembayaran
+                        <strong>tunai, QRIS, kartu debit/kredit melalui EDC</strong>, hingga
+                        <strong>multi-bayar</strong> (split payment) dalam satu transaksi.</p>
+                    <p>Rincian perhitungan total ditampilkan secara transparan: subtotal, diskon, poin anggota, biaya
+                        pengiriman, dan biaya pengepakan. Tersedia juga fitur <strong>penjualan kredit</strong> dan
+                        <strong>penawaran</strong> untuk fleksibilitas bisnis yang lebih besar.</p>
                     <div class="feature-tags">
                         <span class="feature-tag"><i class="fas fa-check"></i> Multi Bayar</span>
                         <span class="feature-tag"><i class="fas fa-check"></i> QRIS Dynamic</span>
@@ -1968,7 +2122,8 @@
                 </div>
                 <div class="showcase-phone">
                     <div class="phone-mockup">
-                        <img src="img/Untitled.3png.png" alt="Proses Pembayaran AULIASOFT - Multi Payment" loading="lazy">
+                        <img src="img/Untitled.3png.png" alt="Proses Pembayaran AULIASOFT - Multi Payment"
+                            loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1976,9 +2131,14 @@
             <!-- Block 4: Laporan Penjualan -->
             <div class="showcase-block reverse animate-on-scroll">
                 <div class="showcase-text">
-                    <h3><i class="fas fa-chart-pie" style="color:var(--primary);margin-right:8px;"></i> Laporan & Analisa Penjualan</h3>
-                    <p>Pantau performa bisnis Anda dengan laporan penjualan yang komprehensif. Lihat <strong>total penjualan, total pembayaran, refund, penjualan kredit</strong>, dan rincian biaya dalam satu halaman yang mudah dibaca.</p>
-                    <p>Detail produk yang dijual tersaji lengkap dengan <strong>SKU, kwantitas, dan jumlah total</strong> per item. Data ini sangat berguna untuk analisis produk terlaris, perencanaan stok, dan evaluasi kinerja bisnis secara berkala.</p>
+                    <h3><i class="fas fa-chart-pie" style="color:var(--primary);margin-right:8px;"></i> Laporan &
+                        Analisa Penjualan</h3>
+                    <p>Pantau performa bisnis Anda dengan laporan penjualan yang komprehensif. Lihat <strong>total
+                            penjualan, total pembayaran, refund, penjualan kredit</strong>, dan rincian biaya dalam satu
+                        halaman yang mudah dibaca.</p>
+                    <p>Detail produk yang dijual tersaji lengkap dengan <strong>SKU, kwantitas, dan jumlah
+                            total</strong> per item. Data ini sangat berguna untuk analisis produk terlaris, perencanaan
+                        stok, dan evaluasi kinerja bisnis secara berkala.</p>
                     <div class="feature-tags">
                         <span class="feature-tag"><i class="fas fa-check"></i> Ringkasan Penjualan</span>
                         <span class="feature-tag"><i class="fas fa-check"></i> Detail Produk Terjual</span>
@@ -1989,7 +2149,8 @@
                 </div>
                 <div class="showcase-phone">
                     <div class="phone-mockup">
-                        <img src="img/Untitled2.png" alt="Laporan Penjualan AULIASOFT - Ringkasan dan Detail" loading="lazy">
+                        <img src="img/Untitled2.png" alt="Laporan Penjualan AULIASOFT - Ringkasan dan Detail"
+                            loading="lazy">
                     </div>
                 </div>
             </div>
@@ -2045,7 +2206,8 @@
                 <div class="why-content animate-on-scroll">
                     <span class="section-badge"><i class="fas fa-check-circle"></i> Keunggulan</span>
                     <h2>Mengapa Bisnis Anda Membutuhkan AULIASOFT?</h2>
-                    <p>AULIASOFT dirancang untuk memenuhi kebutuhan berbagai jenis usaha. Dari toko retail hingga bisnis kuliner.</p>
+                    <p>AULIASOFT dirancang untuk memenuhi kebutuhan berbagai jenis usaha. Dari toko retail hingga bisnis
+                        kuliner.</p>
                     <ul class="why-list">
                         <li>
                             <i class="fas fa-check-circle"></i>
@@ -2086,7 +2248,9 @@
                         <h3>Jasa Web</h3>
                     </div>
                     <div class="product-card-body">
-                        <p>Layanan pengembangan website profesional untuk kebutuhan bisnis, mulai dari company profile hingga landing page. Terintegrasi dengan AULIASOFT untuk mendukung operasional penjualan dan promosi.</p>
+                        <p>Layanan pengembangan website profesional untuk kebutuhan bisnis, mulai dari company profile
+                            hingga landing page. Terintegrasi dengan AULIASOFT untuk mendukung operasional penjualan dan
+                            promosi.</p>
                         <span class="product-price"><i class="fas fa-tag"></i> Rp50.000 – Rp2.500.000</span>
                     </div>
                 </div>
@@ -2096,7 +2260,8 @@
                         <h3>Toko / Warung</h3>
                     </div>
                     <div class="product-card-body">
-                        <p>Solusi aplikasi kasir AULIASOFT untuk toko dan warung agar transaksi lebih cepat, pencatatan penjualan rapi, serta laporan harian otomatis dan akurat.</p>
+                        <p>Solusi aplikasi kasir AULIASOFT untuk toko dan warung agar transaksi lebih cepat, pencatatan
+                            penjualan rapi, serta laporan harian otomatis dan akurat.</p>
                         <span class="product-price"><i class="fas fa-tag"></i> Mulai dari Rp50.000</span>
                     </div>
                 </div>
@@ -2106,7 +2271,8 @@
                         <h3>Paket Hardware POS</h3>
                     </div>
                     <div class="product-card-body">
-                        <p>Paket perangkat kasir pemula: printer struk thermal, laci uang otomatis, dan scanner barcode. Proses transaksi lebih cepat, rapi, dan minim kesalahan input.</p>
+                        <p>Paket perangkat kasir pemula: printer struk thermal, laci uang otomatis, dan scanner barcode.
+                            Proses transaksi lebih cepat, rapi, dan minim kesalahan input.</p>
                         <span class="product-price"><i class="fas fa-tag"></i> Rp6.000 – Rp3.500.000</span>
                     </div>
                 </div>
@@ -2128,7 +2294,8 @@
                     <div class="pricing-card-badge">Populer</div>
                     <div class="pricing-card-header">
                         <h3>Basic</h3>
-                        <div class="pricing-price"><span class="currency">Rp</span><span class="amount">149.999</span><span class="period">/bulan</span></div>
+                        <div class="pricing-price"><span class="currency">Rp</span><span
+                                class="amount">149.999</span><span class="period">/bulan</span></div>
                         <p>Untuk semua jenis usaha. Kelola operasional dan penjualan lengkap.</p>
                     </div>
                     <div class="pricing-card-body">
@@ -2143,14 +2310,16 @@
                             <li><i class="fas fa-check"></i> Pencatatan Keuangan (Invoice, SO, DO)</li>
                             <li><i class="fas fa-check"></i> Digital Payment (QRIS)</li>
                         </ul>
-                        <a href="https://www.auliasoft.com/order-product?id=515&variant=395" target="_blank" class="btn btn-outline">Order Sekarang</a>
+                        <a href="https://www.auliasoft.com/order-product?id=515&variant=395" target="_blank"
+                            class="btn btn-outline">Order Sekarang</a>
                     </div>
                 </div>
                 <div class="pricing-card featured animate-on-scroll">
                     <div class="pricing-card-badge">Recommended</div>
                     <div class="pricing-card-header">
                         <h3>Standard</h3>
-                        <div class="pricing-price"><span class="currency">Rp</span><span class="amount">349.999</span><span class="period">/bulan</span></div>
+                        <div class="pricing-price"><span class="currency">Rp</span><span
+                                class="amount">349.999</span><span class="period">/bulan</span></div>
                         <p>Kelola operasional, penjualan dan keuangan secara lengkap.</p>
                     </div>
                     <div class="pricing-card-body">
@@ -2167,14 +2336,16 @@
                             <li><i class="fas fa-check"></i> Aplikasi Owner</li>
                             <li><i class="fas fa-check"></i> Order Online</li>
                         </ul>
-                        <a href="https://www.auliasoft.com/order-product?id=515&variant=396" target="_blank" class="btn btn-primary">Order Sekarang</a>
+                        <a href="https://www.auliasoft.com/order-product?id=515&variant=396" target="_blank"
+                            class="btn btn-primary">Order Sekarang</a>
                     </div>
                 </div>
                 <div class="pricing-card animate-on-scroll">
                     <div class="pricing-card-badge">Terlengkap</div>
                     <div class="pricing-card-header">
                         <h3>Premium</h3>
-                        <div class="pricing-price"><span class="currency">Rp</span><span class="amount">749.999</span><span class="period">/bulan</span></div>
+                        <div class="pricing-price"><span class="currency">Rp</span><span
+                                class="amount">749.999</span><span class="period">/bulan</span></div>
                         <p>Automasi operasional, penjualan, keuangan, karyawan dan penggajian.</p>
                     </div>
                     <div class="pricing-card-body">
@@ -2190,7 +2361,8 @@
                             <li><i class="fas fa-check"></i> Order Online (Grabfood, Gofood)</li>
                             <li><i class="fas fa-check"></i> Aulia Teams (Absensi, ePayslip)</li>
                         </ul>
-                        <a href="https://www.auliasoft.com/order-product?id=515&variant=397" target="_blank" class="btn btn-outline">Order Sekarang</a>
+                        <a href="https://www.auliasoft.com/order-product?id=515&variant=397" target="_blank"
+                            class="btn btn-outline">Order Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -2213,7 +2385,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">AULIASOFT adalah aplikasi kasir (Point of Sale) berbasis web yang dirancang untuk membantu bisnis mengelola penjualan, stok, dan laporan keuangan secara cepat, akurat, dan terintegrasi.</div>
+                        <div class="faq-answer-inner">AULIASOFT adalah aplikasi kasir (Point of Sale) berbasis web yang
+                            dirancang untuk membantu bisnis mengelola penjualan, stok, dan laporan keuangan secara
+                            cepat, akurat, dan terintegrasi.</div>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2222,7 +2396,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">AULIASOFT cocok untuk semua jenis usaha, mulai dari toko retail, warung, bisnis kuliner, koperasi, hingga usaha menengah yang membutuhkan sistem kasir dan manajemen operasional yang terintegrasi.</div>
+                        <div class="faq-answer-inner">AULIASOFT cocok untuk semua jenis usaha, mulai dari toko retail,
+                            warung, bisnis kuliner, koperasi, hingga usaha menengah yang membutuhkan sistem kasir dan
+                            manajemen operasional yang terintegrasi.</div>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2231,7 +2407,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Ya! AULIASOFT mendukung berbagai metode pembayaran digital termasuk QRIS Dynamic, EDC (Kartu Debit & Kredit), serta struk digital melalui WhatsApp, SMS, dan Email.</div>
+                        <div class="faq-answer-inner">Ya! AULIASOFT mendukung berbagai metode pembayaran digital
+                            termasuk QRIS Dynamic, EDC (Kartu Debit & Kredit), serta struk digital melalui WhatsApp,
+                            SMS, dan Email.</div>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2240,7 +2418,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Anda bisa langsung memilih paket yang sesuai di halaman harga kami dan klik "Order Sekarang". Tim kami akan menghubungi Anda untuk proses implementasi dan onboarding.</div>
+                        <div class="faq-answer-inner">Anda bisa langsung memilih paket yang sesuai di halaman harga kami
+                            dan klik "Order Sekarang". Tim kami akan menghubungi Anda untuk proses implementasi dan
+                            onboarding.</div>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2249,7 +2429,9 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Tentu! Kami menyediakan dukungan teknis dan maintenance berkelanjutan. Tim support kami tersedia Senin - Minggu, 07:00 - 22:00 WIB untuk membantu penanganan kendala, pembaruan sistem, serta optimasi performa aplikasi.</div>
+                        <div class="faq-answer-inner">Tentu! Kami menyediakan dukungan teknis dan maintenance
+                            berkelanjutan. Tim support kami tersedia Senin - Minggu, 07:00 - 22:00 WIB untuk membantu
+                            penanganan kendala, pembaruan sistem, serta optimasi performa aplikasi.</div>
                     </div>
                 </div>
             </div>
@@ -2268,9 +2450,12 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card animate-on-scroll">
                     <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <blockquote>"Layanan Auliasoft cukup membantu KKMP Bojong Nangka Kec. Kelapa Dua untuk mendukung layanan KKMP kepada anggota koperasi. Sistemnya mudah dipakai, dari pendaftaran online dan sudah terintegrasi dengan aplikasi POS."</blockquote>
+                    <blockquote>"Layanan Auliasoft cukup membantu KKMP Bojong Nangka Kec. Kelapa Dua untuk mendukung
+                        layanan KKMP kepada anggota koperasi. Sistemnya mudah dipakai, dari pendaftaran online dan sudah
+                        terintegrasi dengan aplikasi POS."</blockquote>
                     <div class="testimonial-author">
                         <div class="testimonial-author-avatar">KB</div>
                         <div class="testimonial-author-info">
@@ -2281,9 +2466,11 @@
                 </div>
                 <div class="testimonial-card animate-on-scroll">
                     <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <blockquote>"Aplikasi lengkap. 1 induk dan 7 gerai sudah disiapkan. Selalu dilayani atau dijawab segera jika ada kendala penggunaan aplikasi. Harga tidak memberatkan KKMP/KDMP."</blockquote>
+                    <blockquote>"Aplikasi lengkap. 1 induk dan 7 gerai sudah disiapkan. Selalu dilayani atau dijawab
+                        segera jika ada kendala penggunaan aplikasi. Harga tidak memberatkan KKMP/KDMP."</blockquote>
                     <div class="testimonial-author">
                         <div class="testimonial-author-avatar">CB</div>
                         <div class="testimonial-author-info">
@@ -2294,9 +2481,12 @@
                 </div>
                 <div class="testimonial-card animate-on-scroll">
                     <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <blockquote>"Dengan menggunakan Aplikasi Aulia Soft membuat laporan keuangan lebih cepat, melakukan koreksi lebih mudah. Kami sudah menggunakan selama 6 tahun. Semoga AULIASOFT selalu berjaya."</blockquote>
+                    <blockquote>"Dengan menggunakan Aplikasi Aulia Soft membuat laporan keuangan lebih cepat, melakukan
+                        koreksi lebih mudah. Kami sudah menggunakan selama 6 tahun. Semoga AULIASOFT selalu berjaya."
+                    </blockquote>
                     <div class="testimonial-author">
                         <div class="testimonial-author-avatar">KB</div>
                         <div class="testimonial-author-info">
@@ -2307,9 +2497,12 @@
                 </div>
                 <div class="testimonial-card animate-on-scroll">
                     <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <blockquote>"Team Support AULIASOFT sangat responsif, profesional. Pendampingannya jelas, sabar, dan benar-benar memahami kebutuhan koperasi. Aplikasi terintegrasi memudahkan tata kelola."</blockquote>
+                    <blockquote>"Team Support AULIASOFT sangat responsif, profesional. Pendampingannya jelas, sabar, dan
+                        benar-benar memahami kebutuhan koperasi. Aplikasi terintegrasi memudahkan tata kelola."
+                    </blockquote>
                     <div class="testimonial-author">
                         <div class="testimonial-author-avatar">KL</div>
                         <div class="testimonial-author-info">
@@ -2320,9 +2513,11 @@
                 </div>
                 <div class="testimonial-card animate-on-scroll">
                     <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <blockquote>"Pelayanan 24 jam full service, fast respon. Sangat membantu operasional koperasi kami sehari-hari. Kami sangat puas dengan layanan AULIASOFT."</blockquote>
+                    <blockquote>"Pelayanan 24 jam full service, fast respon. Sangat membantu operasional koperasi kami
+                        sehari-hari. Kami sangat puas dengan layanan AULIASOFT."</blockquote>
                     <div class="testimonial-author">
                         <div class="testimonial-author-avatar">MP</div>
                         <div class="testimonial-author-info">
@@ -2333,9 +2528,11 @@
                 </div>
                 <div class="testimonial-card animate-on-scroll">
                     <div class="testimonial-stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <blockquote>"Pendampingannya sangat responsif menambah kepercayaan diri kami, aplikasinya mudah digunakan. Sangat recommended untuk koperasi."</blockquote>
+                    <blockquote>"Pendampingannya sangat responsif menambah kepercayaan diri kami, aplikasinya mudah
+                        digunakan. Sangat recommended untuk koperasi."</blockquote>
                     <div class="testimonial-author">
                         <div class="testimonial-author-avatar">SM</div>
                         <div class="testimonial-author-info">
@@ -2360,7 +2557,8 @@
             <div class="contact-grid">
                 <div class="contact-info animate-on-scroll">
                     <h2>Mari Berdiskusi</h2>
-                    <p>Silakan hubungi kami untuk informasi lebih lanjut tentang AULIASOFT atau konsultasi kebutuhan bisnis Anda.</p>
+                    <p>Silakan hubungi kami untuk informasi lebih lanjut tentang AULIASOFT atau konsultasi kebutuhan
+                        bisnis Anda.</p>
                     <ul class="contact-detail-list">
                         <li>
                             <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
@@ -2380,7 +2578,8 @@
                             <div class="contact-detail-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="contact-detail-text">
                                 <strong>Alamat</strong>
-                                <span>Rukan Anggrek Merah 2 No 2, Jln. Sekumpul Ujung, Ds. Indrasari, Kec. Martapura Kota, Kab. Banjar - Kalimantan Selatan</span>
+                                <span>Rukan Anggrek Merah 2 No 2, Jln. Sekumpul Ujung, Ds. Indrasari, Kec. Martapura
+                                    Kota, Kab. Banjar - Kalimantan Selatan</span>
                             </div>
                         </li>
                         <li>
@@ -2429,9 +2628,11 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>AULIASOFT</h3>
-                    <p>Aplikasi kasir modern yang membantu Anda mengelola penjualan, stok, dan laporan keuangan secara cepat, akurat, dan terintegrasi.</p>
+                    <p>Aplikasi kasir modern yang membantu Anda mengelola penjualan, stok, dan laporan keuangan secara
+                        cepat, akurat, dan terintegrasi.</p>
                     <div class="footer-social">
-                        <a href="https://wa.me/6281241945881" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/6281241945881" target="_blank" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -2481,7 +2682,7 @@
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         const navCta = document.getElementById('navCta');
-        
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
@@ -2521,9 +2722,9 @@
             btn.addEventListener('click', () => {
                 const item = btn.parentElement;
                 const wasActive = item.classList.contains('active');
-                
+
                 document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                
+
                 if (!wasActive) {
                     item.classList.add('active');
                 }
@@ -2555,20 +2756,20 @@
                 const target = parseInt(el.getAttribute('data-count'));
                 const duration = 2000;
                 const start = performance.now();
-                
+
                 function update(now) {
                     const elapsed = now - start;
                     const progress = Math.min(elapsed / duration, 1);
                     const eased = 1 - Math.pow(1 - progress, 3);
                     el.textContent = Math.floor(eased * target);
-                    
+
                     if (progress < 1) {
                         requestAnimationFrame(update);
                     } else {
                         el.textContent = target;
                     }
                 }
-                
+
                 requestAnimationFrame(update);
             });
         }
@@ -2584,7 +2785,7 @@
 
         // Back to top button
         const backToTop = document.getElementById('backToTop');
-        
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 500) {
                 backToTop.classList.add('visible');
@@ -2599,16 +2800,16 @@
 
         // Active nav link highlighting
         const sections = document.querySelectorAll('section[id]');
-        
+
         window.addEventListener('scroll', () => {
             const scrollPos = window.scrollY + 100;
-            
+
             sections.forEach(section => {
                 const top = section.offsetTop;
                 const height = section.offsetHeight;
                 const id = section.getAttribute('id');
                 const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-                
+
                 if (link) {
                     if (scrollPos >= top && scrollPos < top + height) {
                         document.querySelectorAll('.nav-links a').forEach(a => a.style.color = '');
@@ -2620,4 +2821,5 @@
     </script>
 
 </body>
+
 </html>
