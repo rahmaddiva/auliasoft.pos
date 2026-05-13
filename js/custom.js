@@ -123,16 +123,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
 });
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-        navCta.style.display = 'inline-flex';
-    } else {
-        navbar.classList.remove('scrolled');
-        navCta.style.display = 'none';
-    }
-});
-
 // Mobile menu
 const mobileToggle = document.getElementById('mobileToggle');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -417,16 +407,7 @@ const heroObserver = new IntersectionObserver((entries) => {
 });
 heroObserver.observe(document.querySelector('.hero'));
 
-// Back to top button
 const backToTop = document.getElementById('backToTop');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 500) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
-    }
-});
 
 backToTop.addEventListener('click', () => {
     if (lenis) {
@@ -437,8 +418,19 @@ backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Active nav link highlighting
-window.addEventListener('scroll', () => {
+function updateScrollState() {
+    const isNavbarScrolled = window.scrollY > 50;
+
+    navbar.classList.toggle('scrolled', isNavbarScrolled);
+
+    if (navCta) {
+        navCta.classList.toggle('visible', isNavbarScrolled);
+    }
+
+    if (backToTop) {
+        backToTop.classList.toggle('visible', window.scrollY > 500);
+    }
+
     const scrollPos = window.scrollY + 100;
 
     sections.forEach(section => {
@@ -454,4 +446,44 @@ window.addEventListener('scroll', () => {
             }
         }
     });
-});
+}
+
+updateScrollState();
+window.addEventListener('scroll', updateScrollState, { passive: true });
+
+// Contact form - WhatsApp redirect
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', event => {
+        event.preventDefault();
+
+        const name = document.getElementById('contactName').value.trim();
+        const email = document.getElementById('contactEmail').value.trim();
+        const subject = document.getElementById('contactSubject').value.trim();
+        const message = document.getElementById('contactMessage').value.trim();
+
+        const waNumber = '6281241945881';
+        const text = [
+            `Halo AULIASOFT,`,
+            ``,
+            `Nama: ${name}`,
+            `Email: ${email}`,
+            subject ? `Subjek: ${subject}` : '',
+            ``,
+            `Pesan:`,
+            message
+        ].filter(Boolean).join('\n');
+
+        const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+
+        window.open(waUrl, '_blank');
+    });
+}
+
+// Dynamic copyright year
+const copyrightEl = document.querySelector('.footer-bottom p');
+
+if (copyrightEl) {
+    copyrightEl.innerHTML = `&copy; ${new Date().getFullYear()} AULIASOFT. All rights reserved.`;
+}
